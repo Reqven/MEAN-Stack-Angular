@@ -1,0 +1,32 @@
+<div class="container">
+  
+  <h1>Films</h1>
+
+  <p *ngIf="!films?.length">No films found, maybe you want to <a routerLink="/login">add a new one</a> ?</p>
+
+  <div *ngIf="films?.length" class="mdl-inside">
+    <div class="titlebar titlebar-arrow">
+      <h3 class="titlebar-title titlebar-title-md">
+        <a class="titlebar-link" href="/film/sorties-semaine/">Recently added</a>
+      </h3>
+    </div>
+    <div class="roller-holder js-roller roller-arrow-title roller-hp" data-offset="20" id="roller-1">
+      <div class="roller-overflow">
+        <div class="roller-slider">
+          <div *ngFor="let film of films" class="roller-item">
+            <div class="card card-entity-simple ">
+              <figure class="thumbnail ">
+                <a class="xXx thumbnail-container thumbnail-link" title="{{ film?.title }}" href="/film/fichefilm_gen_cfilm=226391.html">
+                  <img class="thumbnail-img" src="http://fr.web.img6.acsta.net/c_150_200/pictures/18/06/08/14/35/0842353.jpg" alt="{{ film?.title }}" width="150" height="200">
+                </a>
+              </figure>
+              <div class="meta ">
+                <a class="meta-title meta-title-link" href="/film/fichefilm_gen_cfilm=226391.html" title="{{ film?.title }}">{{ film?.title }}</a>
+                <div class="meta-description light">{{film?.author }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

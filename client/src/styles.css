@@ -1,0 +1,85 @@
+/* You can add global styles to this file, and also import other style files */
+.mdl-inside a {
+    color: #333;
+    text-decoration: none;
+    outline: none;
+}
+
+.card-entity .rating-title, .titlebar-title {
+    text-transform: uppercase;
+}
+.titlebar-title {
+    display: inline-block;
+    color: #333;
+    font-weight: 400;
+}
+
+.roller-holder {
+    position: relative;
+}
+
+.roller-slider {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.roller-slider:after {
+    content: "";
+    flex: auto;
+}
+
+
+.roller-hp .roller-item {
+    margin-bottom: 25px;
+    width: 160px;
+}
+
+.card-entity-simple {
+    position: relative;
+}
+
+.thumbnail-container, .thumbnail-link {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.roller-item, .thumbnail {
+    margin-bottom: 2px;
+}
+
+.thumbnail-img {
+    display: block;
+    width: 150px !important;
+    height: 200px !important;
+}
+
+img, video {
+    vertical-align: middle;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-entity-simple .meta-description, .card-entity-simple .meta-title {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.card-entity-simple .meta-title {
+    display: block;
+    font-weight: 700;
+}
+
+.card-entity-simple .meta-description, .card-entity-simple .meta-title {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.light {
+    color: #b3b3b3;
+}
