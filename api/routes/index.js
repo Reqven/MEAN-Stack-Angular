@@ -19,6 +19,9 @@ router.post('/login', ctrlAuth.login);
 
 //films
 router.get('/films', ctrlFilms.findAll);
-router.post('/films', ctrlFilms.create);
+router.post('/film', ctrlFilms.create);
+router.get('/film/:id', ctrlFilms.find);
+router.put('/film/:id', ctrlFilms.update);
+router.delete('/film/:id', ctrlFilms.delete);
 
 module.exports = router;

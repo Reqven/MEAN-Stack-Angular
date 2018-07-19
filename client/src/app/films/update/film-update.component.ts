@@ -1,20 +1,47 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FilmService } from '../../film.service';
 
 @Component({
-  templateUrl: './film-.component.html'
+  templateUrl: './film-update.component.html'
 })
 export class FilmUpdateComponent {
-  films;
+  _id: String;
+  deleted = false;
+  init = false;
+  film;
 
-  constructor(private Film: FilmService, private http: HttpClient) {}
+  constructor(private Film: FilmService, private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {    
-    this.Film.getFilms().subscribe(films => {
-      this.films = films;
+    this._id = this.route.snapshot.params['id'];
+    this.Film.getFilm(this._id).subscribe(film => {
+      this.film = film;
+      this.init = true;
     }, (err) => {
       console.error(err);
+      this.init = true;
+    });
+  }
+
+  updateFilm() {
+    this.Film.updateFilm(this._id, this.film).subscribe(film => {
+      this.router.navigateByUrl('/film/' + this._id);
+    }, (err) => {
+      console.error(err);
+      this.deleted = false;
+      this.film = null;
+    });
+  }
+
+  deleteFilm() {
+    this.Film.deleteFilm(this._id).subscribe(film => {
+      this.deleted = true;
+      this.film = null;
+    }, (err) => {
+      console.error(err);
+      this.deleted = false;
+      this.film = null;
     });
   }
 }

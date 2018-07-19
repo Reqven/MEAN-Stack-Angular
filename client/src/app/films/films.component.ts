@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { FilmService } from '../film.service';
 
 @Component({
@@ -8,7 +7,7 @@ import { FilmService } from '../film.service';
 export class FilmsComponent {
   films;
 
-  constructor(private Film: FilmService, private http: HttpClient) {}
+  constructor(private Film: FilmService) {}
 
   ngOnInit() {    
     this.Film.getFilms().subscribe(films => {

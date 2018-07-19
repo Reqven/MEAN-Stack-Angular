@@ -1,8 +1,8 @@
 <div class="container">
   
   <h1>Films</h1>
-
-  <p *ngIf="!films?.length">No films found, maybe you want to <a routerLink="/login">add a new one</a> ?</p>
+  <p *ngIf="films?.length">Didn't find your favorite film? Maybe you want to <a routerLink="/film/create">add a new one</a> ?</p>
+  <p *ngIf="!films?.length">No films found, maybe you want to <a routerLink="/film/create">add a new one</a> ?</p>
 
   <div *ngIf="films?.length" class="mdl-inside">
     <div class="titlebar titlebar-arrow">
@@ -16,13 +16,13 @@
           <div *ngFor="let film of films" class="roller-item">
             <div class="card card-entity-simple ">
               <figure class="thumbnail ">
-                <a class="xXx thumbnail-container thumbnail-link" title="{{ film?.title }}" href="/film/fichefilm_gen_cfilm=226391.html">
+                <a routerLink="/film/{{ film?._id }}" class="xXx thumbnail-container thumbnail-link" title="{{ film?.title }}">
                   <img class="thumbnail-img" src="http://fr.web.img6.acsta.net/c_150_200/pictures/18/06/08/14/35/0842353.jpg" alt="{{ film?.title }}" width="150" height="200">
                 </a>
               </figure>
-              <div class="meta ">
+              <div class="meta">
                 <a class="meta-title meta-title-link" href="/film/fichefilm_gen_cfilm=226391.html" title="{{ film?.title }}">{{ film?.title }}</a>
-                <div class="meta-description light">{{film?.author }}</div>
+                <div class="meta-description light">{{ film?.author }}</div>
               </div>
             </div>
           </div>

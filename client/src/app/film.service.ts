@@ -13,7 +13,6 @@ export interface FilmDetails {
 
 @Injectable()
 export class FilmService {
-  private token: string;
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -21,15 +20,15 @@ export class FilmService {
     return this.http.get('/api/films');
   }
   public getFilm(id): Observable<any> {
-    return this.http.get('/api/films/'+ id);
+    return this.http.get('/api/film/'+ id);
   }
   public createFilm(film): Observable<any> {
-    return this.http.post('/api/films', film);
+    return this.http.post('/api/film', film);
   }
   public deleteFilm(id): Observable<any> {
-    return this.http.delete('/api/films/'+ id);
+    return this.http.delete('/api/film/'+ id);
   }
   public updateFilm(id, film): Observable<any> {
-    return this.http.put('/api/films/'+ id, film);
+    return this.http.put('/api/film/'+ id, film);
   }
 }

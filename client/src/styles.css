@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+a:hover {
+    cursor: pointer;
+}
+
 .mdl-inside a {
     color: #333;
     text-decoration: none;
@@ -82,4 +86,19 @@ img, video {
 
 .light {
     color: #b3b3b3;
+}
+
+.film {
+    display: flex;
+    margin-top: 30px;
+}
+.film .details {
+    flex-grow: 2;
+    margin-left: 20px;
+}
+.film label.control-label {
+    text-align: left;
+}
+.film .form-group {
+    margin-bottom: 0;
 }
