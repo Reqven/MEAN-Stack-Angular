@@ -9,6 +9,7 @@ export interface FilmDetails {
   title: string;
   author: string;
   year: number;
+  image: string;
 }
 
 @Injectable()

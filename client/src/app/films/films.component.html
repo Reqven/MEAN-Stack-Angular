@@ -15,13 +15,11 @@
         <div class="roller-slider">
           <div *ngFor="let film of films" class="roller-item">
             <div class="card card-entity-simple ">
-              <figure class="thumbnail ">
-                <a routerLink="/film/{{ film?._id }}" class="xXx thumbnail-container thumbnail-link" title="{{ film?.title }}">
-                  <img class="thumbnail-img" src="http://fr.web.img6.acsta.net/c_150_200/pictures/18/06/08/14/35/0842353.jpg" alt="{{ film?.title }}" width="150" height="200">
-                </a>
-              </figure>
+              <a routerLink="/film/{{ film?._id }}" class="xXx thumbnail-container thumbnail-link" title="{{ film?.title }}">
+                <figure class="thumbnail" [ngStyle]="{'background-image': getImage(film.image)}"></figure>
+              </a>
               <div class="meta">
-                <a class="meta-title meta-title-link" href="/film/fichefilm_gen_cfilm=226391.html" title="{{ film?.title }}">{{ film?.title }}</a>
+                <a routerLink="/film/{{ film?._id }}" class="meta-title meta-title-link" title="{{ film?.title }}">{{ film?.title }}</a>
                 <div class="meta-description light">{{ film?.author }}</div>
               </div>
             </div>

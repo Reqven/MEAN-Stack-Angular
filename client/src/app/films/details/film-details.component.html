@@ -4,23 +4,21 @@
   <div class="row film">
     <div class="cover">
       <div class="card card-entity-simple">
-        <figure class="thumbnail ">
-            <img class="thumbnail-img" src="http://fr.web.img6.acsta.net/c_150_200/pictures/18/06/08/14/35/0842353.jpg" alt="{{ film?.title }}" width="150" height="200">
-        </figure>
+        <figure class="thumbnail" [ngStyle]="{'background-image': getImage()}"></figure>
       </div>
     </div>
     <div class="details">
       <div class="form-horizontal">
         <div class="form-group">
-          <label class="col-sm-1 control-label">Title</label>
+          <label class="col-xs-2 col-md-1 control-label">Title</label>
           <p class="form-control-static">{{ film?.title }}</p>
         </div>
         <div class="form-group">
-          <label class="col-sm-1 control-label">Author</label>
+          <label class="col-xs-2 col-md-1 control-label">Author</label>
           <p class="form-control-static">{{ film?.author }}</p>
         </div>
         <div class="form-group">
-          <label class="col-sm-1 control-label">Year</label>
+          <label class="col-xs-2 col-md-1 control-label">Year</label>
           <p class="form-control-static">{{ film?.year }}</p>
         </div>
       </div>

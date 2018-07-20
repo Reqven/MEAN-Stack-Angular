@@ -50,16 +50,8 @@ a:hover {
 
 .roller-item, .thumbnail {
     margin-bottom: 2px;
-}
-
-.thumbnail-img {
-    display: block;
     width: 150px !important;
     height: 200px !important;
-}
-
-img, video {
-    vertical-align: middle;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

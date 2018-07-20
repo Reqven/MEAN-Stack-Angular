@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthenticationService, UserDetails } from '../authentication.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   templateUrl: './profile.component.html'
@@ -7,7 +8,9 @@ import { AuthenticationService, UserDetails } from '../authentication.service';
 export class ProfileComponent {
   details: UserDetails;
 
-  constructor(private auth: AuthenticationService) {}
+  constructor(private auth: AuthenticationService, private titleService: Title) {
+    this.titleService.setTitle("Profile");
+  }
   
   ngOnInit() {    
     this.auth.profile().subscribe(user => {

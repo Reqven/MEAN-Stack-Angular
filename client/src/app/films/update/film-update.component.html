@@ -6,7 +6,7 @@
       <form (submit)="updateFilm()">
         <div class="form-group">
           <label for="title">Title</label>
-          <input type="text" class="form-control" name="title" placeholder="Enter the title" [(ngModel)]="film.title">
+          <input type="text" class="form-control" name="title" placeholder="Enter the title" (input)="setTitle()" [(ngModel)]="film.title">
         </div>
         <div class="form-group">
           <label for="author">Author</label>
@@ -15,6 +15,10 @@
         <div class="form-group">
           <label for="year">Year</label>
           <input type="text" class="form-control" name="year" placeholder="2018" [(ngModel)]="film.year">
+        </div>
+        <div class="form-group">
+          <label for="image">Image</label>
+          <input type="text" class="form-control" name="image" placeholder="http://www.domain.com/image.png" [(ngModel)]="film.image">
         </div>
         <button type="submit" class="btn btn-default">Update</button><button routerLink="/film/{{ film?._id }}" class="btn btn-default">Cancel</button>
       </form>
